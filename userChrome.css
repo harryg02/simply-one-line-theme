@@ -1,0 +1,320 @@
+/* @import "firefox-gnome-theme/userChrome.css"; */
+
+@media screen and (min-width: 1260px) {
+
+/* Title bar */
+.titlebar-buttonbox {
+    display: none !important;
+}
+
+.titlebar-spacer {
+    display: none !important;
+}
+
+
+
+/* Tab bar */
+#navigator-toolbox {
+    border: 0px !important;
+}
+
+#TabsToolbar {
+    margin-left: 28.3vw !important; /* Tab reserved space for toolbar*/
+}
+
+/* Nav bar*/
+#nav-bar {
+    background: transparent !important;
+    margin-top: -42px !important;
+    margin-right: 71.4vw !important; /* Nav bar (tabs) width, the larger the value the narrower the url bar*/
+}
+
+/* hide icons when navbar active*/
+
+/* URL bar */
+#back-button {
+    margin-left: -7px !important;
+    /* margin-top: 1px !important; */
+}
+
+#forward-button {
+    display: none !important;
+}
+
+#stop-reload-button {
+    margin-left: -2px !important;
+    margin-right: 2px !important;
+}
+
+/* reload button position */
+.chromeclass-toolbar-additional {
+  margin-left: -1px !important;
+  margin-bottom: 2px !important;
+ } 
+
+
+
+#tracking-protection-icon-container {
+    display: none !important;
+}
+
+/* URL bar */
+#urlbar-container {    
+    min-width: 109px !important;
+    transition: 0.1s;
+    margin-left: 2px !important;
+}
+
+/* URL bar position */
+
+#urlbar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: 0.2s;
+    top: 4px !important;
+    position: relative;
+}
+
+
+/* URL bar after click */
+
+
+#urlbar[focused]:not([open]),
+#urlbar[breakout][breakout-extend] {
+  top: 3.5px !important;
+  left: -69px !important;
+  /* left: -4.5vw !important; */
+  width: 27.5vw !important;
+  padding: 0px !important;
+  z-index: 999  !important;
+}
+
+/* for alternate Density settings */
+[uidensity="compact"] #urlbar[breakout][breakout-extend] {
+  top: 3px !important;
+}
+[uidensity="touch"] #urlbar[breakout][breakout-extend] {
+  top: 4px !important;
+}
+
+/* Prevent shift of URL bar contents */
+
+
+#urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding: 0 !important;
+}
+
+
+
+
+
+
+#page-action-buttons {
+    display: none !important;
+}
+
+/* 
+#PanelUI-button {
+    display: none !important;
+}
+ */
+
+
+#PanelUI-button {
+    margin-left:-2px !important;
+}
+
+} 
+
+
+/* Remove left space of toolbar  */
+
+.titlebar-spacer[type="pre-tabs"] {
+
+  display: none !important;
+
+}
+
+
+
+
+
+/* Customize window action buttons ( Close, Min, Max ) */
+
+.titlebar-button {
+
+  margin: 7px !important;
+
+  margin-left: 0 !important;
+
+  margin-right: 5px !important;
+
+  border-radius: 4px !important;
+
+}
+
+
+/* Apply dimmed background for inactive tabs */
+
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
+
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+
+}
+
+.tabbrowser-tab>.tab-stack>.tab-background:not([selected], [multiselected]) {
+
+  background-color: color-mix(in srgb, currentColor 6%, transparent);
+
+}
+
+
+
+
+
+/* Make all tabs small except selected one */
+
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {  
+
+  max-width: 150px !important;
+
+  min-width: 45px !important;
+
+}
+
+
+
+
+
+/* Selected tabs width */
+
+.tabbrowser-tab[selected][fadein]:not([pinned]) {  
+
+  max-width: 220px !important;
+
+  min-width: 100px !important;
+
+}
+
+
+
+
+
+/* Hide tab close button */
+
+#TabsToolbar .close-icon {
+
+  display: none !important;
+
+}
+
+
+
+
+
+/* Unhide close button when it is selected tab and not pinned */
+
+#TabsToolbar .tabbrowser-tab[selected=true]:not([pinned]) .close-icon {
+
+  display: -moz-box !important;
+
+}
+
+
+
+
+
+/* Show close button even when mouse hover on inactive tabs
+
+#TabsToolbar .tabbrowser-tab:not([selected="true"]):not([pinned]):hover .close-icon{
+
+  display: -moz-box !important;
+
+}
+ */
+
+
+
+
+/* Reduce spacing between pinned and regular tabs */
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] { 
+
+  margin-inline-start: initial !important; 
+
+}
+
+
+
+
+
+/* Menu items border and padding */
+
+menupopup > menuitem,
+
+menupopup > menu {
+
+  border-radius: 4px !important;
+
+  margin-left: 4px !important;
+
+  margin-right: 4px !important;
+
+}
+
+
+
+
+
+/* context menu top left button padding */
+
+menugroup > menuitem:first-child {  
+
+  padding-left: 4px !important;
+
+}
+
+
+
+
+
+/* context menu top right button padding */
+
+menugroup > menuitem:last-child {  
+
+  padding-right: 4px !important;
+
+}
+
+
+
+
+
+/* context menu top buttons radius */
+
+menugroup > menuitem {
+
+  border-radius: 4px !important;
+
+}
+
+menugroup > menuitem > hbox > image {  
+
+  border-radius: 4px !important;
+
+}
+
+
+
+
+
+/* Popup Menu background color */
+
+/*menupopup{
+
+  --menu-background-color: rgb(66,65,77) !important;
+
+}*/
+
